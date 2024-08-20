@@ -45,12 +45,6 @@ for col in combined_data:
     print(f'Number of outliers: {outliers.sum()}')
     print(combined_data.loc[outliers, col]) 
 
-#After all the outlier calculation, there were 25-30 outliers. Almost all of those outliers were worth 
-#keeping, as they were conventional outliers, meaning they were slightly exaggerated stats that still
-#resulted in the outcome they should've. E.g. a game with 65% from 3 leading to a win. This high a 3P%  
-#would almost always result in a win, so it shouldn't be taken out. The only true outliers were
-#removed as a result and this finished the process of cleaning the data. 
-
 #Keeping rows with conventional outliers (slightly exaggerated stats that still resulted in the outcome 
 #expected, such a game with 65% 3P% leading to a win). Removing outliers that would confuse the model
 combined_data = combined_data.drop(38)
