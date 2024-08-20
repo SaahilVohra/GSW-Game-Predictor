@@ -1,0 +1,14 @@
+all_teams_data_for_23-24_predictions/
+__pycache__/
+.vscode/
+warriors_22-23_season.csv
+feature_importance.py
+22-23_data_collection.py
+23-24_data_collection.py
+23-24_season_simulator_failed_attempt1.py
+23-24_season_simulator_failed_attempt2.py
+calculating_opps_avgs.py
+df_with_correct_data_for_simulator.py
+template_for_other_teams_data.py
+data_cleaning_for_me.py
+training_and_testing_for_me.py
