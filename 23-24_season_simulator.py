@@ -14,24 +14,20 @@ season_2022_23_data = pd.read_csv('warriors_22-23_season.csv')
 # Only want the warriors' stats from last 20 games
 last_20_games = season_2022_23_data[['Warriors FG%', 'Warriors 3P%', 'Warriors FT Made', 'Warriors TRB', 'Warriors AST', 'Warriors STL', 'Warriors BLK', 'Warriors TOV', 'Warriors PF']].tail(20)
 
-# Initialize a stack to hold last 20 games
 recent_games = deque(maxlen=20)
 
-# Add games to stack
 for index, game in last_20_games.iterrows():
     recent_games.append(game)
 
-# Initialize lists to store predictions and actual outcomes for evaluation
 predictions = []
 actuals = []
 
 # Load warriors stats for 23-24 season
 full_warriors_stats_df = pd.read_csv('warriors_23-24_season.csv')
 
-# Iterate over each game in the 2023-24 season
 for game_index in range(82):
     # Input opponent data as a comma-separated string
-    opponent_input = input(f"Game {game_index + 1} - Enter opponent stats as a comma-separated list (FG%, 3P%, FT Made, TRB, AST, STL, BLK, TOV, PF): ")
+    opponent_input = input(f"Game {game_index + 1} - Enter opponent stats as a comma-separated string (FG%, 3P%, FT Made, TRB, AST, STL, BLK, TOV, PF): ")
     #convert string to a list of floats
     opponent_data_list = list(map(float, opponent_input.split(',')))
     
@@ -51,10 +47,10 @@ for game_index in range(82):
     # Compute rolling averages of the last 20 games for the Warriors
     rolling_averages = pd.DataFrame(recent_games).mean()
 
-    # Get the stats for the current game from the CSV file
+    # Get the stats for the current game
     current_game_stats = full_warriors_stats_df.iloc[game_index]
 
-    # Convert current game stats to dictionary
+    # add current game stats to dictionary
     full_warriors_stats = {
         'Warriors FG%': current_game_stats['Warriors FG%'],
         'Warriors 3P%': current_game_stats['Warriors 3P%'],
@@ -80,7 +76,7 @@ for game_index in range(82):
         'PF Difference': rolling_averages['Warriors PF'] - opponent_data['Opp PF'],
     }
 
-    # Convert the combined data into a DataFrame for prediction
+    # Convert the differences data into a DataFrame for prediction
     input_df = pd.DataFrame([differences])
 
     #print(input_df)
@@ -102,7 +98,6 @@ for game_index in range(82):
     #calculate and print accuracy after each game
     accuracy = accuracy_score(actuals, predictions)
     print(f"Model Accuracy on 2023-24 Season: {accuracy * 100:.2f}%")
-
 
 # After the loop, calculate total accuracy of the model
 accuracy = accuracy_score(actuals, predictions)
