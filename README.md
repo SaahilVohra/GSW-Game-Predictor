@@ -85,7 +85,7 @@ Game Context: Considering in-game factors like clutch performance and foul troub
 Contributions are welcome! If you'd like to improve the model, add new features, or report bugs, feel free to:  
 
 Fork the repository.  
-Create a new branch (git checkout -b feature-branch).  
+Create a new branch.  
 Make your changes.  
 Submit a pull request.  
 
