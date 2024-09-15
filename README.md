@@ -1,4 +1,6 @@
-# __NBA Win-Loss Predictor for the Golden State Warriors__
+# __NBA Win-Loss Predictor for the Golden State Warriors__  
+
+Contributors: Saahil Vohra and Sachith Chandran
 
 ### __Table of Contents__
 * Introduction
