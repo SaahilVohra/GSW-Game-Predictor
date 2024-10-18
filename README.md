@@ -21,7 +21,7 @@ This project focuses on enhancing predictive accuracy, building on past season d
 
 ### __Features__
 * Team & Opponent Statistics: Incorporates game stats such as field goals, assists, rebounds, and free throws for both the Warriors and their opponents.
-* Historical Data: Utilizes nealrly a decade of historical performance data to enhance predictive power, wihle also adhering to the everchanging style of play.
+* Historical Data: Utilizes nearly a decade of historical performance data to enhance predictive power, wihle also adhering to the everchanging style of play.
 * Machine Learning Model: A Random Forest Classifier was trained and tested to predict the outcome of each game.
 * Win-Loss Simulation: The model simulates the full season and estimates the Warriors' win-loss record at the end of the season.
 * Accuracy Benchmark: Achieved a accuracy of 63% when simulating the 2023-24 NBA season, a competitive rate compared to top sports analytics models that perform at 65-66% accuracy.
